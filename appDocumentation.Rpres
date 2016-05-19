@@ -1,10 +1,12 @@
-appDocumentation
+Application Documentation
 ========================================================
 author: Ivan Fernandez
 date: 20/05/2016
 
 Introduction
 ========================================================
+
+Ice Cream Advisor
 
 This application is developed using R Programming 
 language in R Studio.  The app is developed using Shiny,
@@ -27,11 +29,6 @@ These are the the different fruits available:
 - banana
 - blueberry
 
-These are the different toppings available:
-- white chocolate
-- oreos
-- peanuts
-- caramel
 
 ========================================================
 
@@ -46,6 +43,6 @@ These are the different toppings available:
 Slide With Code
 ========================================================
 
-All code available in github: ivanjfernandez1
+All code available in github: ivanjfernandez1/applications
 
 
