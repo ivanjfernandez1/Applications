@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ice Cream Advisor</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Ice Cream Advisor">
+  <meta name="author" content="Ivan Fernandez">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/zenburn.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Ice Cream Advisor</h1>
+    <h2>a flavor helper</h2>
+    <p>Ivan Fernandez<br/>Ice Cream Enthusiast</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Background</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Selecting the correct type of ice cream is one of the most important decisions an individual faces everyday. </li>
+<li>Differences in taste and preferences have trigger an unprecedented production of very different ice cream flavors and combinations</li>
+<li>Most americans spend an average of .10 hours/day selecting the correct ice cream</li>
+<li>Left unchecked, the amount spent on ice cream selection could double in the next 100 years</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Approach</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>We have survey and compiled peoples preferences for the past year idenfiying some very simple and common flavors</p></li>
+<li><p>Ice cream is composed of two main flavors: fruit and topping</p></li>
+<li><p>The top fruit flavors are: 
+1.-Strawberry
+2.-Coconut
+3.-Banana
+4.-Blueberry</p></li>
+<li><p>The top toppings are:
+1.-Caramel
+2.-White Chocolate
+3.-Peanuts
+4.-Oreos</p></li>
+<li><p>Our simple Advisor engine pairs these flavors with the correct Ben and Jerry&#39;s Ice Cream our research has idenfified as optimal</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Ice Cream Survey Resuls</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li> strawberry=Strawberry Cheesecake</li>
+<li> banana=Babana Split</li>
+<li> coconut=Coconutterly Fair</li>
+<li> blueberry=Blueberry Greek Frozen Yogurt</li>
+<li> oreos=Cookie Dough</li>
+<li> White Chocolate=Baked Alaska</li>
+<li> caramel=Caramel Chew Chew</li>
+<li> peanuts=Peanutbutter Cup</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Code</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>icefruit &lt;- function(fruit){ 
+   if (fruit==&quot;strawberry&quot;) &quot;Strawberry Cheesecake&quot;
+   else if (fruit==&quot;banana&quot;) &quot;Babana Split&quot;
+   else if (fruit==&quot;coconut&quot;) &quot;Coconutterly Fair&quot;
+   else if (fruit==&quot;blueberry&quot;) &quot;Blueberry Greek Frozen Yogurt&quot;
+ } </p>
+
+<p>icetopping &lt;- function(topping){ 
+   if (topping==&quot;oreos&quot;) &quot;Cookie Dough&quot;
+   else if (topping==&quot;White Chocolate&quot;) &quot;Baked Alaska&quot;
+   else if (topping==&quot;caramel&quot;) &quot;Caramel Chew Chew&quot;
+   else if (topping==&quot;peanuts&quot;) &quot;Peanutbutter Cup&quot; </p>
+
+<p>} </p>
+
+<p>shinyServer( 
+         function(input, output) { 
+                 output$inputValue &lt;- renderPrint({input$fruit}) 
+                 output$prediction &lt;- renderPrint({icefruit(input$fruit)}) </p>
+
+<pre><code>             output$inputValue2 &lt;- renderPrint({input$topping}) 
+             output$prediction2 &lt;- renderPrint({icetopping(input$topping)}) 
+     } 
+</code></pre>
+
+<p>) </p>
+
+<hr>
+
+<h2>Appendix</h2>
+
+<ol>
+<li> Github Shiny: <a href="https://github.com/ivanjfernandez1/Applications">https://github.com/ivanjfernandez1/Applications</a></li>
+<li> Ben and Jerry&#39;s: <a href="http://www.benjerry.com/">http://www.benjerry.com/</a></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Background'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Approach'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Ice Cream Survey Resuls'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Code'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='NA'>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
