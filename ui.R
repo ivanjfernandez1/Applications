@@ -1,17 +1,17 @@
 shinyUI( 
           pageWithSidebar( 
                     
-                   headerPanel("Music and movie prediction"), 
+                   headerPanel("Ice Cream Advisor"), 
                    sidebarPanel( 
-                           textInput('fruit', label="favorite fruit"), 
-                           textInput('topping', label="favorite topping"), 
+                           textInput('fruit', label="favorite fruit?(strawberry, blueberry, coconut or banana)"), 
+                           textInput('topping', label="favorite topping?(caramel, peanuts, white chocolate or oreos"), 
                            submitButton('Submit for flavor') 
                    ), 
                    mainPanel( 
-                           h3('Ice Cream Advisor'), 
-                           h4('What is your favorite fruit(strawberry, blueberry, coconut or banana)?'), 
+                           h3('Our suggestions to you'), 
+                           h4('Your favorite fruit'), 
                            verbatimTextOutput("inputValue"), 
-                           h4('Your Selection'), 
+                           h4('Your favorite topping'), 
                            verbatimTextOutput("inputValue2"), 
                            h4('You must try this one '), 
                            verbatimTextOutput("prediction"), 

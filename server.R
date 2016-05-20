@@ -7,7 +7,7 @@
  
  icetopping <- function(topping){ 
    if (topping=="oreos") "Cookie Dough"
-   else if (topping=="White Chocolate") "Baked Alaska"
+   else if (topping=="white chocolate") "Baked Alaska"
    else if (topping=="caramel") "Caramel Chew Chew"
    else if (topping=="peanuts") "Peanutbutter Cup" 
   

@@ -41,6 +41,9 @@ knit        : slidify::knit2slides
   
 5. Our simple Advisor engine pairs these flavors with the correct Ben and Jerry's Ice Cream our research has idenfified as optimal
 
+6. Application URL:  https://ivanjfernandez1.shinyapps.io/ice_cream/
+7. Github Shiny: https://github.com/ivanjfernandez1/Applications
+8. Ben and Jerry's: http://www.benjerry.com/
 
 ---
 
@@ -60,41 +63,33 @@ knit        : slidify::knit2slides
 
 ## Code
 
-icefruit <- function(fruit){ 
-   if (fruit=="strawberry") "Strawberry Cheesecake"
-   else if (fruit=="banana") "Babana Split"
-   else if (fruit=="coconut") "Coconutterly Fair"
-   else if (fruit=="blueberry") "Blueberry Greek Frozen Yogurt"
- } 
- 
- icetopping <- function(topping){ 
-   if (topping=="oreos") "Cookie Dough"
-   else if (topping=="White Chocolate") "Baked Alaska"
-   else if (topping=="caramel") "Caramel Chew Chew"
-   else if (topping=="peanuts") "Peanutbutter Cup" 
-  
- } 
+shinyUI( 
+          pageWithSidebar( 
+                    
+                   headerPanel("Music and movie prediction"), 
+                   sidebarPanel( 
+                           textInput('fruit', label="favorite fruit?(strawberry, blueberry, coconut or banana)"), 
+                           textInput('topping', label="favorite topping?(caramel, peanuts, white chocolate or oreos"), 
+                           submitButton('Submit for flavor') 
+                   ), 
+                   mainPanel( 
+                           h3('Ice Cream Advisor'), 
+                           h4('Your favorite fruit'), 
+                           verbatimTextOutput("inputValue"), 
+                           h4('Your favorite topping'), 
+                           verbatimTextOutput("inputValue2"), 
+                           h4('You must try this one '), 
+                           verbatimTextOutput("prediction"), 
+                           h4('This one is right up your ally '), 
+                           verbatimTextOutput("prediction2") 
+                   ) 
+           ) 
+   ) 
 
- shinyServer( 
-         function(input, output) { 
-                 output$inputValue <- renderPrint({input$fruit}) 
-                 output$prediction <- renderPrint({icefruit(input$fruit)}) 
-                  
-                 output$inputValue2 <- renderPrint({input$topping}) 
-                 output$prediction2 <- renderPrint({icetopping(input$topping)}) 
-         } 
- ) 
- 
- 
  
  
 ---
 
-## Appendix
 
-1.  Github Shiny: https://github.com/ivanjfernandez1/Applications
-2.  Ben and Jerry's: http://www.benjerry.com/
-
----
 
 

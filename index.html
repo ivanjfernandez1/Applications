@@ -76,6 +76,9 @@
 3.-Peanuts
 4.-Oreos</p></li>
 <li><p>Our simple Advisor engine pairs these flavors with the correct Ben and Jerry&#39;s Ice Cream our research has idenfified as optimal</p></li>
+<li><p>Application URL:  <a href="https://ivanjfernandez1.shinyapps.io/ice_cream/">https://ivanjfernandez1.shinyapps.io/ice_cream/</a></p></li>
+<li><p>Github Shiny: <a href="https://github.com/ivanjfernandez1/Applications">https://github.com/ivanjfernandez1/Applications</a></p></li>
+<li><p>Ben and Jerry&#39;s: <a href="http://www.benjerry.com/">http://www.benjerry.com/</a></p></li>
 </ol>
 
   </article>
@@ -107,49 +110,33 @@
     <h2>Code</h2>
   </hgroup>
   <article data-timings="">
-    <p>icefruit &lt;- function(fruit){ 
-   if (fruit==&quot;strawberry&quot;) &quot;Strawberry Cheesecake&quot;
-   else if (fruit==&quot;banana&quot;) &quot;Babana Split&quot;
-   else if (fruit==&quot;coconut&quot;) &quot;Coconutterly Fair&quot;
-   else if (fruit==&quot;blueberry&quot;) &quot;Blueberry Greek Frozen Yogurt&quot;
- } </p>
+    <p>shinyUI( 
+          pageWithSidebar( </p>
 
-<p>icetopping &lt;- function(topping){ 
-   if (topping==&quot;oreos&quot;) &quot;Cookie Dough&quot;
-   else if (topping==&quot;White Chocolate&quot;) &quot;Baked Alaska&quot;
-   else if (topping==&quot;caramel&quot;) &quot;Caramel Chew Chew&quot;
-   else if (topping==&quot;peanuts&quot;) &quot;Peanutbutter Cup&quot; </p>
-
-<p>} </p>
-
-<p>shinyServer( 
-         function(input, output) { 
-                 output$inputValue &lt;- renderPrint({input$fruit}) 
-                 output$prediction &lt;- renderPrint({icefruit(input$fruit)}) </p>
-
-<pre><code>             output$inputValue2 &lt;- renderPrint({input$topping}) 
-             output$prediction2 &lt;- renderPrint({icetopping(input$topping)}) 
-     } 
+<pre><code>               headerPanel(&quot;Music and movie prediction&quot;), 
+               sidebarPanel( 
+                       textInput(&#39;fruit&#39;, label=&quot;favorite fruit?(strawberry, blueberry, coconut or banana)&quot;), 
+                       textInput(&#39;topping&#39;, label=&quot;favorite topping?(caramel, peanuts, white chocolate or oreos&quot;), 
+                       submitButton(&#39;Submit for flavor&#39;) 
+               ), 
+               mainPanel( 
+                       h3(&#39;Ice Cream Advisor&#39;), 
+                       h4(&#39;Your favorite fruit&#39;), 
+                       verbatimTextOutput(&quot;inputValue&quot;), 
+                       h4(&#39;Your favorite topping&#39;), 
+                       verbatimTextOutput(&quot;inputValue2&quot;), 
+                       h4(&#39;You must try this one &#39;), 
+                       verbatimTextOutput(&quot;prediction&quot;), 
+                       h4(&#39;This one is right up your ally &#39;), 
+                       verbatimTextOutput(&quot;prediction2&quot;) 
+               ) 
+       ) 
 </code></pre>
 
 <p>) </p>
 
 <hr>
 
-<h2>Appendix</h2>
-
-<ol>
-<li> Github Shiny: <a href="https://github.com/ivanjfernandez1/Applications">https://github.com/ivanjfernandez1/Applications</a></li>
-<li> Ben and Jerry&#39;s: <a href="http://www.benjerry.com/">http://www.benjerry.com/</a></li>
-</ol>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-5" style="background:;">
-  <article data-timings="">
-    
   </article>
   <!-- Presenter Notes -->
 </slide>
@@ -180,12 +167,6 @@
       <a href="#" target="_self" rel='tooltip' 
         data-slide=4 title='Code'>
          4
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='NA'>
-         5
       </a>
     </li>
   </ul>
